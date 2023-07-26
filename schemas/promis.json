@@ -1,0 +1,66 @@
+{
+    "name":"",
+    "description":"",
+    "title":"",
+    "fields":[
+        {
+            "module": "Record and linkage",
+            "name": "jdc_person_id",
+            "title": "JCOIN data commons person identifier",
+            "type": "string",
+            "description": "The generated unique identifier specific to the JCOIN Data Commons for a given individual (client or staff).",
+
+            "constraints": {
+                "required": true,
+                "pattern": "[A-Z][0-9]{3}-[0-9]{4}"
+            }
+        },
+        {
+            "module": "Record and linkage",
+            "name": "visit_number",
+            "title": "Visit Number",
+            "type": "integer",
+            "description": "A number that identifies the visit or timepoint of data collection (baseline=1 and each subsequent follow up is 2 or greater).",
+            "constraints": {
+                "required": true,
+                "minimum": 1
+            }
+        },
+        {
+            "module": "Record and linkage",
+            "name": "visit_month",
+            "title": "Visit Month",
+            "type": "string",
+            "description": "Marks the intended visit time point. For example, if the baseline visit, this should be populated as Baseline.\\n If a follow up, this should be populated as the Month and month number (eg., for a study with a Baseline and 3,6, and 12 month follow ups the values should be Baseline, Month 3, Month 6, Month 12, respectively.\\nIMPORTANT: this field represents the intended month in the study design.\\nSo, for example, if a participant comes back 2 months after Baseline for the Month 1 follow up, this field should still be populated with Month 1.",
+            "constraints": {
+                "required": true,
+                "pattern": "^Baseline$|^\\d+ month$"
+            }
+        },
+        {
+            "module": "Record and linkage",
+            "name": "shifted_visit_date",
+            "title": "Visit Date (shifted)",
+            "type": "date",
+            "description": "This is the date of the visit (ie time point) after shifting by a random number 182 days before or 182 days after the actual visit date. The shifting is done on the individual level which retains the time interval between visits (and allows calculations of days between time points or other date fields which are shifted by the same number of days). To avoid issues with type conversion errors, the date is of type integer",
+            "constraints": {
+                "required": true
+            },
+            "format": "%Y%m%d"
+        },
+        {
+            "module": "Record and linkage",
+            "name": "visit_type",
+            "title": "Visit Type",
+            "type": "string",
+            "description": "The visit type/category (either baseline or follow up)",
+            "constraints": {
+                "enum": [
+                    "Baseline",
+                    "Follow-up"
+                ],
+                "required": true
+            }
+        } 
+    ]
+}
