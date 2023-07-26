@@ -2,17 +2,25 @@
   name: PROPr
   title: PROMIS-Preference Score
   description: |
-    The PROMIS-Preference (PROPr) score is a generic, societal, preference-based summary score. It is based on
-    PROMIS scores for Cognitive Function Abilities, Depression, Fatigue, Pain Interference, Physical Function, Sleep
-    Disturbance, and Ability to Participate in Social Roles and Activities.
+    The PROMIS-Preference (PROPr) score is a summary score combining multiple, independent functional domains 
+    intended to span the entire health state space of an individual (i.e., Cognitive Function Abilities, Depression, Fatigue, Pain Interference, Physical Function, Sleep
+    Disturbance, and Ability to Participate in Social Roles and Activities).
+
+    Calculation: 
+    Input variables: cognition_utility,
+  type: number
   source: https://github.com/janelhanmer/PROPr
 - module: PROMIS - construct scores
   name: cognition_utility
   title: Cognitive Utility Score
   description: |
     A latent construct score of cognitive health state expressed as the ability to concentrate
-    and ability to remember. 
+    and ability to remember.
+
+    Calculation:
+    Input variables: 
   source: https://github.com/janelhanmer/PROPr
+  type: number 
 - module: PROMIS - construct scores
   name: depression_utility
   title: Depression Utility Score
@@ -20,6 +28,10 @@
   description: |
     A latent construct score measuring depressive health state expressed as the feelings
     of helplessness, hopelessness, worthlessness, and depression over the past week.
+
+    Calculation:
+    Input variables: 
+  type: number 
 - module: PROMIS - construct scores
   name: fatigue_utility
   title: Fatigue Utility Score
@@ -27,6 +39,11 @@
   description: |
     A latent construct score measuring fatigue expressed as the feeling of being 
     rundown, tired, or fatigued over the past week.
+
+    Calculation:
+    Input variables:
+
+  type: number
 - module: PROMIS - construct scores
   name: pain_utility
   title: Pain Interference Utility Score
@@ -35,6 +52,11 @@
     A latent construct score measuring interference in participation due to pain 
     expressed as pain interference with day-to-day activities, chores, house work,house chores, 
     and social activities. 
+
+    Calculation:
+    Input variables:
+
+  type: number
 - module: PROMIS - construct scores
   name: physical_utility
   title: Physical Utility Score
@@ -42,13 +64,23 @@
   description: |
     A latent construct score measuring physical function expressed as 
     difficulty level with chores, walking up stairs, and traveling.
+
+    Calculation:
+    Input variables:
+
+  type: number
 - module: PROMIS - construct scores
   name: sleep_utility
   title: Sleep Distrubance Utility
   source: https://github.com/janelhanmer/PROPr
   description: |
     A latent construct score measuring sleep function (disturbance) expressed as 
-    as the level of sleep quality, refreshment, problems, and difficulty falling asleep.   
+    as the level of sleep quality, refreshment, problems, and difficulty falling asleep.
+
+    Calculation:
+    Input variables:
+    
+  type: number   
 - module: PROMIS - construct scores
   name: social_utility
   title: Social Roles/Activities Utility Score
@@ -57,3 +89,8 @@
     A latent construct score measuring the ability to participate in social 
     roles and activities as expressed by trouble with doing regular leisure 
     activities, family activities, usual work, and desired activities with friends.
+
+    Calculation:
+    Input variables:
+    
+  type: number
