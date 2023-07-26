@@ -1,0 +1,663 @@
+{
+  "name": "timepoints_promis",
+  "title": "Timepoints: PROMIS",
+  "description": "PROMIS individual and latent construct scores across visits",
+  "fields": [
+    {
+      "module": "Record and linkage",
+      "name": "jdc_person_id",
+      "title": "JCOIN data commons person identifier",
+      "type": "string",
+      "description": "The generated unique identifier specific to the JCOIN Data Commons for a given individual (client or staff).",
+      "original_name": "jdc_person_id",
+      "constraints": {
+        "required": true,
+        "pattern": "[A-Z][0-9]{3}-[0-9]{4}"
+      }
+    },
+    {
+      "module": "Record and linkage",
+      "name": "visit_number",
+      "title": "Visit Number",
+      "type": "integer",
+      "description": "A number that identifies the visit or timepoint of data collection (baseline=1 and each subsequent follow up is 2 or greater).",
+      "original_name": "visit_number",
+      "constraints": {
+        "required": true,
+        "minimum": 1
+      }
+    },
+    {
+      "module": "Record and linkage",
+      "name": "visit_month",
+      "title": "Visit Month",
+      "type": "string",
+      "description": "Marks the intended visit time point. For example, if the baseline visit, this should be populated as Baseline.\\n If a follow up, this should be populated as the Month and month number (eg., for a study with a Baseline and 3,6, and 12 month follow ups the values should be Baseline, Month 3, Month 6, Month 12, respectively.\\nIMPORTANT: this field represents the intended month in the study design.\\nSo, for example, if a participant comes back 2 months after Baseline for the Month 1 follow up, this field should still be populated with Month 1.",
+      "original_name": "visit_month",
+      "constraints": {
+        "required": true,
+        "pattern": "^Baseline$|^\\d+ month$"
+      }
+    },
+    {
+      "module": "Record and linkage",
+      "name": "shifted_visit_date",
+      "title": "Visit Date (shifted)",
+      "type": "date",
+      "description": "This is the date of the visit (ie time point) after shifting by a random number 182 days before or 182 days after the actual visit date. The shifting is done on the individual level which retains the time interval between visits (and allows calculations of days between time points or other date fields which are shifted by the same number of days). To avoid issues with type conversion errors, the date is of type integer",
+      "original_name": "shifted_visit_dt",
+      "constraints": {
+        "required": true
+      },
+      "format": "%Y%m%d"
+    },
+    {
+      "module": "Record and linkage",
+      "name": "visit_type",
+      "title": "Visit Type",
+      "type": "string",
+      "description": "The visit type/category (either baseline or follow up)",
+      "constraints": {
+        "enum": [
+          "Baseline",
+          "Follow-up"
+        ],
+        "required": true
+      },
+      "original_name": "visit_type"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "difficulty_chores",
+      "title": "Difficulty with chores and house keeping",
+      "type": "string",
+      "description": "[... do chores such as sweeping, mopping, janitorial work or other house cleaning work] In the past 7 days I was able to . . .",
+      "constraints": {
+        "enum": [
+          "Without any difficulty",
+          "With a little difficulty",
+          "With some difficulty",
+          "With much difficulty",
+          "Unable to do"
+        ]
+      },
+      "original_name": "p1a"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "difficulty_stairs",
+      "title": "Difficulty using stairs",
+      "type": "string",
+      "description": "[...go up and down stairs at a normal pace] In the past 7 days I was able to . . .",
+      "constraints": {
+        "enum": [
+          "Without any difficulty",
+          "With a little difficulty",
+          "With some difficulty",
+          "With much difficulty",
+          "Unable to do"
+        ]
+      },
+      "original_name": "p1b"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "difficulty_walking",
+      "title": "Difficulty walking",
+      "type": "string",
+      "description": "[...walk around for at least 15 minutes] In the past 7 days I was able to . . .",
+      "constraints": {
+        "enum": [
+          "Without any difficulty",
+          "With a little difficulty",
+          "With some difficulty",
+          "With much difficulty",
+          "Unable to do"
+        ]
+      },
+      "original_name": "p1c"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "difficulty_traveling",
+      "title": "Difficulty traveling",
+      "type": "string",
+      "description": "[... get from place to place] In the past 7 days I was able to . . .",
+      "constraints": {
+        "enum": [
+          "Without any difficulty",
+          "With a little difficulty",
+          "With some difficulty",
+          "With much difficulty",
+          "Unable to do"
+        ]
+      },
+      "original_name": "p1d"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "trouble_with_leisure",
+      "title": "Trouble with Leisure activities with others",
+      "type": "string",
+      "description": "[...I had trouble doing all of my regular leisure activities with others ] In the past 7 days...",
+      "constraints": {
+        "enum": [
+          "Never",
+          "Rarely",
+          "Sometimes",
+          "Often",
+          "Always"
+        ]
+      },
+      "original_name": "p2a"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "trouble_with_family",
+      "title": "Trouble with family activities",
+      "type": "string",
+      "description": "[...I had trouble doing all of the family activities that I want to do ] In the past 7 days...",
+      "constraints": {
+        "enum": [
+          "Never",
+          "Rarely",
+          "Sometimes",
+          "Often",
+          "Always"
+        ]
+      },
+      "original_name": "p2b"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "trouble_with_work",
+      "title": "Trouble with work",
+      "type": "string",
+      "description": "[...I had trouble doing all of my usual work (include work at home) ] In the past 7 days...",
+      "constraints": {
+        "enum": [
+          "Never",
+          "Rarely",
+          "Sometimes",
+          "Often",
+          "Always"
+        ]
+      },
+      "original_name": "p2c"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "trouble_with_activities",
+      "title": "Trouble with activities with friends",
+      "type": "string",
+      "description": "[...I had trouble doing all of the activities with friends that I want to do ] In the past 7 days...",
+      "constraints": {
+        "enum": [
+          "Never",
+          "Rarely",
+          "Sometimes",
+          "Often",
+          "Always"
+        ]
+      },
+      "original_name": "p2d"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "past_week_fearful",
+      "title": "Feeling fearful",
+      "type": "string",
+      "description": "[...I felt fearful] In the past 7 days...",
+      "constraints": {
+        "enum": [
+          "Never",
+          "Rarely",
+          "Sometimes",
+          "Often",
+          "Always"
+        ]
+      },
+      "original_name": "p3a"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "past_week_anxiety",
+      "title": "Feeling hard to focus on anything other than anxiety",
+      "type": "string",
+      "description": "[...I found it hard to focus on anything other than my anxiety] In the past 7 days...",
+      "constraints": {
+        "enum": [
+          "Never",
+          "Rarely",
+          "Sometimes",
+          "Often",
+          "Always"
+        ]
+      },
+      "original_name": "p3b"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "past_week_worried",
+      "title": "Feeling overwhelming worry",
+      "type": "string",
+      "description": "[...My worries overwhelmed me] In the past 7 days...",
+      "constraints": {
+        "enum": [
+          "Never",
+          "Rarely",
+          "Sometimes",
+          "Often",
+          "Always"
+        ]
+      },
+      "original_name": "p3c"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "past_week_uneasy",
+      "title": "Feeling uneasy",
+      "type": "string",
+      "description": "[...I felt uneasy] In the past 7 days...",
+      "constraints": {
+        "enum": [
+          "Never",
+          "Rarely",
+          "Sometimes",
+          "Often",
+          "Always"
+        ]
+      },
+      "original_name": "p3d"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "past_week_worthless",
+      "title": "Feeling worthless",
+      "type": "string",
+      "description": "[...I felt worthless] In the past 7 days...",
+      "constraints": {
+        "enum": [
+          "Never",
+          "Rarely",
+          "Sometimes",
+          "Often",
+          "Always"
+        ]
+      },
+      "original_name": "p4a"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "past_week_helpless",
+      "title": "Feeling helpless",
+      "type": "string",
+      "description": "[...I felt helpless] In the past 7 days...",
+      "constraints": {
+        "enum": [
+          "Never",
+          "Rarely",
+          "Sometimes",
+          "Often",
+          "Always"
+        ]
+      },
+      "original_name": "p4b"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "past_week_depressed",
+      "title": "Feeling depressed",
+      "type": "string",
+      "description": "[...I felt depressed] In the past 7 days...",
+      "constraints": {
+        "enum": [
+          "Never",
+          "Rarely",
+          "Sometimes",
+          "Often",
+          "Always"
+        ]
+      },
+      "original_name": "p4c"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "past_week_hopeless",
+      "title": "Feeling hopeless",
+      "type": "string",
+      "description": "[...I felt hopeless ] In the past 7 days...",
+      "constraints": {
+        "enum": [
+          "Never",
+          "Rarely",
+          "Sometimes",
+          "Often",
+          "Always"
+        ]
+      },
+      "original_name": "p4d"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "past_week_fatigued",
+      "title": "Feeling fatigued",
+      "type": "string",
+      "description": "[...I felt fatigued] In the past 7 days...",
+      "constraints": {
+        "enum": [
+          "Not at all",
+          "A little bit",
+          "Somewhat",
+          "Quite a bit",
+          "Very much"
+        ]
+      },
+      "original_name": "p5a"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "past_week_tired",
+      "title": "Trouble starting things because tired",
+      "type": "string",
+      "description": "[...I had trouble starting things because I was tired  ] In the past 7 days...",
+      "constraints": {
+        "enum": [
+          "Not at all",
+          "A little bit",
+          "Somewhat",
+          "Quite a bit",
+          "Very much"
+        ]
+      },
+      "original_name": "p5b"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "past_week_rundown",
+      "title": "Feeling run-down",
+      "type": "string",
+      "description": "[...how run-down did you feel on average? ] In the past 7 days...",
+      "constraints": {
+        "enum": [
+          "Not at all",
+          "A little bit",
+          "Somewhat",
+          "Quite a bit",
+          "Very much"
+        ]
+      },
+      "original_name": "p5c"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "fatigue_level",
+      "title": "Fatigue level",
+      "type": "string",
+      "description": "[...how fatigued were you on average?] In the past 7 days...",
+      "constraints": {
+        "enum": [
+          "Not at all",
+          "A little bit",
+          "Somewhat",
+          "Quite a bit",
+          "Very much"
+        ]
+      },
+      "original_name": "p5d"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "sleep_quality",
+      "title": "Sleep quality",
+      "type": "string",
+      "description": "[...my sleep quality was] In the past 7 days...",
+      "constraints": {
+        "enum": [
+          "Very poor",
+          "Poor",
+          "Fair",
+          "Good",
+          "Very good"
+        ]
+      },
+      "original_name": "p6a"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "sleep_refreshing",
+      "title": "Refreshing sleep",
+      "type": "string",
+      "description": "[...my sleep was refreshing] In the past 7 days...",
+      "constraints": {
+        "enum": [
+          "Not at all",
+          "A little bit",
+          "Somewhat",
+          "Quite a bit",
+          "Very much"
+        ]
+      },
+      "original_name": "p6b"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "sleep_problems",
+      "title": "Sleep problems",
+      "type": "string",
+      "description": "[...I had problems with my sleep] In the past 7 days...",
+      "constraints": {
+        "enum": [
+          "Not at all",
+          "A little bit",
+          "Somewhat",
+          "Quite a bit",
+          "Very much"
+        ]
+      },
+      "original_name": "p6c"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "sleep_difficulty",
+      "title": "Difficulty falling asleep",
+      "type": "string",
+      "description": "[...I had difficulty falling asleep] In the past 7 days...",
+      "constraints": {
+        "enum": [
+          "Not at all",
+          "A little bit",
+          "Somewhat",
+          "Quite a bit",
+          "Very much"
+        ]
+      },
+      "original_name": "p6d"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "can_concentrate",
+      "title": "Concentration",
+      "type": "string",
+      "description": "[...I have been able to concentrate ] In the past 7 days...",
+      "constraints": {
+        "enum": [
+          "Not at all",
+          "A little bit",
+          "Somewhat",
+          "Quite a bit",
+          "Very much"
+        ]
+      },
+      "original_name": "p7a"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "can_remember",
+      "title": "Remembering things",
+      "type": "string",
+      "description": "[...I have been able to remember to do things, like take medicine or buy something I needed ] In the past 7 days...",
+      "constraints": {
+        "enum": [
+          "Not at all",
+          "A little bit",
+          "Somewhat",
+          "Quite a bit",
+          "Very much"
+        ]
+      },
+      "original_name": "p7b"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "pain_daily_activity",
+      "title": "Pain interference with day to day activity",
+      "type": "string",
+      "description": "[...How much did pain interfere with your day to day activities? ] In the past 7 days...",
+      "constraints": {
+        "enum": [
+          "Not at all",
+          "A little bit",
+          "Somewhat",
+          "Quite a bit",
+          "Very much"
+        ]
+      },
+      "original_name": "p8a"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "pain_work_around_house",
+      "title": "Pain inteference with home work",
+      "type": "string",
+      "description": "[...How much did pain interfere with work around the home? ] In the past 7 days...",
+      "constraints": {
+        "enum": [
+          "Not at all",
+          "A little bit",
+          "Somewhat",
+          "Quite a bit",
+          "Very much"
+        ]
+      },
+      "original_name": "p8b"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "pain_social_activity",
+      "title": "Pain interference with social activities",
+      "type": "string",
+      "description": "[...How much did pain interfere with your ability to participate in social activities? ] In the past 7 days...",
+      "constraints": {
+        "enum": [
+          "Not at all",
+          "A little bit",
+          "Somewhat",
+          "Quite a bit",
+          "Very much"
+        ]
+      },
+      "original_name": "p8c"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "pain_household_chores",
+      "title": "Pain interference with household chores",
+      "type": "string",
+      "description": "[...How much did pain interfere with your household chores? ] In the past 7 days...",
+      "constraints": {
+        "enum": [
+          "Not at all",
+          "A little bit",
+          "Somewhat",
+          "Quite a bit",
+          "Very much"
+        ]
+      },
+      "original_name": "p8d"
+    },
+    {
+      "module": "PROMIS 29+2/ PROPr",
+      "name": "pain_intensity",
+      "title": "Pain intensity rating",
+      "type": "integer",
+      "description": "[In the past 7 days, how would you rate your pain on average?] For the next question, please responds on scale from 0 being no pain to 10 being the worst pain imaginable.",
+      "original_name": "p9",
+      "constraints": {
+        "maximum": 10
+      }
+    },
+    {
+      "module": "PROMIS - construct scores",
+      "name": "PROPr",
+      "title": "PROMIS-Preference Score",
+      "description": "The PROMIS-Preference (PROPr) score is a summary score (ie multi-attribute) combining multiple, independent functional domains \nintended to span the entire health state space of an individual (i.e., Cognitive Function Abilities, Depression, Fatigue, Pain Interference, Physical Function, Sleep\nDisturbance, and Ability to Participate in Social Roles and Activities).\n\nCalculation: TODO\nInput variables: [\"cognition_utility\", \"depression_utility\",\n  \"anxiety_utility\",\"fatigue_utility\", \"sleep_utility\", \"social_utility\"]\n",
+      "type": "number",
+      "source": "https://github.com/janelhanmer/PROPr"
+    },
+    {
+      "module": "PROMIS - construct scores",
+      "name": "cognition_utility",
+      "title": "Cognitive Utility Score",
+      "description": "A latent construct score of cognitive health state expressed as the ability to concentrate\nand ability to remember.\n\nCalculation: TODO\nInput variables: [\"can_concentrate\", \"can_remember\"]\n",
+      "source": "https://github.com/janelhanmer/PROPr",
+      "type": "number"
+    },
+    {
+      "module": "PROMIS - construct scores",
+      "name": "depression_utility",
+      "title": "Depression Utility Score",
+      "source": "https://github.com/janelhanmer/PROPr",
+      "description": "A latent construct score measuring depressive health state expressed as the feelings\nof helplessness, hopelessness, worthlessness, and depression over the past week.\n\nCalculation: TODO\nInput variables: [\n        \"past_week_worthless\",\n        \"past_week_helpless\",\n        \"past_week_depressed\",\n        \"past_week_hopeless\",\n    ]\n",
+      "type": "number"
+    },
+    {
+      "module": "PROMIS - construct scores",
+      "name": "anxiety_utility",
+      "title": "Anxiety Utility Score",
+      "source": "https://github.com/janelhanmer/PROPr",
+      "description": "A latent construct score measuring anxiety state expressed as \nfeelings of difficulty focusing on anything other than anxiety, \nworry, fear, uneasiness over the past week.\n\nCalculation: TODO\nInput variables: [\n        \"past_week_fearful\",\n        \"past_week_anxiety\",\n        \"past_week_worried\",\n        \"past_week_uneasy\",\n    ]\n",
+      "type": "number"
+    },
+    {
+      "module": "PROMIS - construct scores",
+      "name": "fatigue_utility",
+      "title": "Fatigue Utility Score",
+      "source": "https://github.com/janelhanmer/PROPr",
+      "description": "A latent construct score measuring fatigue expressed as the feeling of being \nrundown, tired, or fatigued over the past week.\n\nCalculation: TODO\nInput variables: [\n        \"past_week_fatigued\",\n        \"past_week_tired\",\n        \"past_week_rundown\",\n        \"fatigue_level\",\n  ]\n",
+      "type": "number"
+    },
+    {
+      "module": "PROMIS - construct scores",
+      "name": "pain_utility",
+      "title": "Pain Interference Utility Score",
+      "source": "https://github.com/janelhanmer/PROPr",
+      "description": "A latent construct score measuring interference in participation due to pain \nexpressed as pain interference with day-to-day activities, chores, house work,house chores, \nand social activities. \n\nCalculation: TODO\nInput variables: [\n        \"trouble_with_leisure\",\n        \"trouble_with_family\",\n        \"trouble_with_work\",\n        \"trouble_with_activities\",\n    ]\n",
+      "type": "number"
+    },
+    {
+      "module": "PROMIS - construct scores",
+      "name": "physical_utility",
+      "title": "Physical Utility Score",
+      "source": "https://github.com/janelhanmer/PROPr",
+      "description": "A latent construct score measuring physical function expressed as \ndifficulty level with chores, walking up stairs, and traveling.\n\nCalculation: TODO\nInput variables: [\n        \"difficulty_chores\",\n        \"difficulty_stairs\",\n        \"difficulty_walking\",\n        \"difficulty_traveling\",\n    ]\n",
+      "type": "number"
+    },
+    {
+      "module": "PROMIS - construct scores",
+      "name": "sleep_utility",
+      "title": "Sleep Distrubance Utility",
+      "source": "https://github.com/janelhanmer/PROPr",
+      "description": "A latent construct score measuring sleep function (disturbance) expressed as \nas the level of sleep quality, refreshment, problems, and difficulty falling asleep.\n\nCalculation: TODO\nInput variables: [\n        \"sleep_quality\",\n        \"sleep_refreshing\",\n        \"sleep_problems\",\n        \"sleep_difficulty\",\n    ]\n",
+      "type": "number"
+    },
+    {
+      "module": "PROMIS - construct scores",
+      "name": "social_utility",
+      "title": "Social Roles/Activities Utility Score",
+      "source": "https://github.com/janelhanmer/PROPr",
+      "description": "A latent construct score measuring the ability to participate in social \nroles and activities as expressed by trouble with doing regular leisure \nactivities, family activities, usual work, and desired activities with friends.\n\nCalculation: TODO\nInput variables: [\n        \"trouble_with_leisure\",\n        \"trouble_with_family\",\n        \"trouble_with_work\",\n        \"trouble_with_activities\",\n    ]\n",
+      "type": "number"
+    }
+  ]
+}

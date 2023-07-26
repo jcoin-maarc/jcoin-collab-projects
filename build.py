@@ -1,17 +1,30 @@
 from jdc_utils.core_measures import schemas
 import pandas as pd
 from collections import OrderedDict
+import yaml
+import json
+from pathlib import Path
 
+# get promis time points schema (only with derived variables) from dictionary
+promis_schema = yaml.safe_load(Path("schemas/dictionary/promis.yaml").read_text())
 modules = ["Record and linkage", "PROMIS 29+2/ PROPr"]
-timepoint_fields = [
+promis_schema["fields"] = [
     dict(OrderedDict(field))
     for field in schemas.timepoints["fields"]
     if field["module"] in modules
-]
+] + promis_schema["fields"]
 
+
+# baseline schema
+baseline_schema = dict(schemas.baseline)
 excluded_names = ["quarter_enrolled"]
-baseline_fields = [
+baseline_schema["fields"] = [
     dict(OrderedDict(field))
     for field in schemas.baseline["fields"]
     if not field["name"] in excluded_names
 ]
+
+# write to json
+Path("schemas/promis").mkdir(exist_ok=True)
+Path("schemas/promis/timepoints_promis.json").write_text(json.dumps(promis_schema,indent=2))
+Path("schemas/promis/baseline.json").write_text(json.dumps(baseline_schema,indent=2))

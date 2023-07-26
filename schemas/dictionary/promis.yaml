@@ -1,13 +1,21 @@
+
+name: "timepoints_promis"
+title: "Timepoints: PROMIS"
+description: "PROMIS individual and latent construct scores across visits"
+fields:
+# NOTE: individual measures pulled from core measure timepoints schema and not
+# included here
 - module: PROMIS - construct scores
   name: PROPr
   title: PROMIS-Preference Score
   description: |
-    The PROMIS-Preference (PROPr) score is a summary score combining multiple, independent functional domains 
+    The PROMIS-Preference (PROPr) score is a summary score (ie multi-attribute) combining multiple, independent functional domains 
     intended to span the entire health state space of an individual (i.e., Cognitive Function Abilities, Depression, Fatigue, Pain Interference, Physical Function, Sleep
     Disturbance, and Ability to Participate in Social Roles and Activities).
 
-    Calculation: 
-    Input variables: cognition_utility,
+    Calculation: TODO
+    Input variables: ["cognition_utility", "depression_utility",
+      "anxiety_utility","fatigue_utility", "sleep_utility", "social_utility"]
   type: number
   source: https://github.com/janelhanmer/PROPr
 - module: PROMIS - construct scores
@@ -17,10 +25,10 @@
     A latent construct score of cognitive health state expressed as the ability to concentrate
     and ability to remember.
 
-    Calculation:
-    Input variables: 
+    Calculation: TODO
+    Input variables: ["can_concentrate", "can_remember"]
   source: https://github.com/janelhanmer/PROPr
-  type: number 
+  type: number
 - module: PROMIS - construct scores
   name: depression_utility
   title: Depression Utility Score
@@ -29,9 +37,31 @@
     A latent construct score measuring depressive health state expressed as the feelings
     of helplessness, hopelessness, worthlessness, and depression over the past week.
 
-    Calculation:
-    Input variables: 
-  type: number 
+    Calculation: TODO
+    Input variables: [
+            "past_week_worthless",
+            "past_week_helpless",
+            "past_week_depressed",
+            "past_week_hopeless",
+        ]
+  type: number
+- module: PROMIS - construct scores
+  name: anxiety_utility
+  title: Anxiety Utility Score
+  source: https://github.com/janelhanmer/PROPr
+  description: |
+    A latent construct score measuring anxiety state expressed as 
+    feelings of difficulty focusing on anything other than anxiety, 
+    worry, fear, uneasiness over the past week.
+
+    Calculation: TODO
+    Input variables: [
+            "past_week_fearful",
+            "past_week_anxiety",
+            "past_week_worried",
+            "past_week_uneasy",
+        ]
+  type: number
 - module: PROMIS - construct scores
   name: fatigue_utility
   title: Fatigue Utility Score
@@ -40,8 +70,13 @@
     A latent construct score measuring fatigue expressed as the feeling of being 
     rundown, tired, or fatigued over the past week.
 
-    Calculation:
-    Input variables:
+    Calculation: TODO
+    Input variables: [
+            "past_week_fatigued",
+            "past_week_tired",
+            "past_week_rundown",
+            "fatigue_level",
+      ]
 
   type: number
 - module: PROMIS - construct scores
@@ -53,8 +88,13 @@
     expressed as pain interference with day-to-day activities, chores, house work,house chores, 
     and social activities. 
 
-    Calculation:
-    Input variables:
+    Calculation: TODO
+    Input variables: [
+            "trouble_with_leisure",
+            "trouble_with_family",
+            "trouble_with_work",
+            "trouble_with_activities",
+        ]
 
   type: number
 - module: PROMIS - construct scores
@@ -65,8 +105,13 @@
     A latent construct score measuring physical function expressed as 
     difficulty level with chores, walking up stairs, and traveling.
 
-    Calculation:
-    Input variables:
+    Calculation: TODO
+    Input variables: [
+            "difficulty_chores",
+            "difficulty_stairs",
+            "difficulty_walking",
+            "difficulty_traveling",
+        ]
 
   type: number
 - module: PROMIS - construct scores
@@ -77,10 +122,15 @@
     A latent construct score measuring sleep function (disturbance) expressed as 
     as the level of sleep quality, refreshment, problems, and difficulty falling asleep.
 
-    Calculation:
-    Input variables:
-    
-  type: number   
+    Calculation: TODO
+    Input variables: [
+            "sleep_quality",
+            "sleep_refreshing",
+            "sleep_problems",
+            "sleep_difficulty",
+        ]
+
+  type: number
 - module: PROMIS - construct scores
   name: social_utility
   title: Social Roles/Activities Utility Score
@@ -90,7 +140,12 @@
     roles and activities as expressed by trouble with doing regular leisure 
     activities, family activities, usual work, and desired activities with friends.
 
-    Calculation:
-    Input variables:
-    
+    Calculation: TODO
+    Input variables: [
+            "trouble_with_leisure",
+            "trouble_with_family",
+            "trouble_with_work",
+            "trouble_with_activities",
+        ]
+
   type: number
