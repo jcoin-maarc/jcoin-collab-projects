@@ -149,3 +149,12 @@ fields:
         ]
 
   type: number
+
+primaryKey:
+- jdc_person_id
+missingValues:
+- Don't know
+- Refused
+- Left blank
+- Legitimately skipped
+- Missing

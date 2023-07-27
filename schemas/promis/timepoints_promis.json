@@ -659,5 +659,15 @@
       "description": "A latent construct score measuring the ability to participate in social \nroles and activities as expressed by trouble with doing regular leisure \nactivities, family activities, usual work, and desired activities with friends.\n\nCalculation: TODO\nInput variables: [\n        \"trouble_with_leisure\",\n        \"trouble_with_family\",\n        \"trouble_with_work\",\n        \"trouble_with_activities\",\n    ]\n",
       "type": "number"
     }
+  ],
+  "primaryKey": [
+    "jdc_person_id"
+  ],
+  "missingValues": [
+    "Don't know",
+    "Refused",
+    "Left blank",
+    "Legitimately skipped",
+    "Missing"
   ]
 }
