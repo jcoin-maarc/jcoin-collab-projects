@@ -807,7 +807,7 @@
     },
     {
       "module": "PROMIS - construct scores",
-      "name": "cognition_utility",
+      "name": "cognitive_utility",
       "title": "Cognitive Utility Score",
       "description": "A latent construct score of cognitive health state expressed as the ability to concentrate\nand ability to remember.\n\nCalculation: TODO\nInput variables: [\"can_concentrate\", \"can_remember\"]\n",
       "source": "https://github.com/janelhanmer/PROPr",

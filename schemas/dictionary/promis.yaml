@@ -675,7 +675,7 @@ fields:
   type: number
   source: https://github.com/janelhanmer/PROPr
 - module: PROMIS - construct scores
-  name: cognition_utility
+  name: cognitive_utility
   title: Cognitive Utility Score
   description: |
     A latent construct score of cognitive health state expressed as the ability to concentrate
