@@ -79,7 +79,7 @@ fields:
     - 4
     - 5
   original_name: p1a
-  encoding:
+  encodings:
     '1': Without any difficulty
     '2': With a little difficulty
     '3': With some difficulty
@@ -99,7 +99,7 @@ fields:
     - 4
     - 5
   original_name: p1b
-  encoding:
+  encodings:
     '1': Without any difficulty
     '2': With a little difficulty
     '3': With some difficulty
@@ -119,7 +119,7 @@ fields:
     - 4
     - 5
   original_name: p1c
-  encoding:
+  encodings:
     '1': Without any difficulty
     '2': With a little difficulty
     '3': With some difficulty
@@ -139,7 +139,7 @@ fields:
     - 4
     - 5
   original_name: p1d
-  encoding:
+  encodings:
     '1': Without any difficulty
     '2': With a little difficulty
     '3': With some difficulty
@@ -159,7 +159,7 @@ fields:
     - 4
     - 5
   original_name: p2a
-  encoding:
+  encodings:
     '1': Never
     '2': Rarely
     '3': Sometimes
@@ -179,7 +179,7 @@ fields:
     - 4
     - 5
   original_name: p2b
-  encoding:
+  encodings:
     '1': Never
     '2': Rarely
     '3': Sometimes
@@ -199,7 +199,7 @@ fields:
     - 4
     - 5
   original_name: p2c
-  encoding:
+  encodings:
     '1': Never
     '2': Rarely
     '3': Sometimes
@@ -219,7 +219,7 @@ fields:
     - 4
     - 5
   original_name: p2d
-  encoding:
+  encodings:
     '1': Never
     '2': Rarely
     '3': Sometimes
@@ -238,7 +238,7 @@ fields:
     - 4
     - 5
   original_name: p3a
-  encoding:
+  encodings:
     '1': Never
     '2': Rarely
     '3': Sometimes
@@ -258,7 +258,7 @@ fields:
     - 4
     - 5
   original_name: p3b
-  encoding:
+  encodings:
     '1': Never
     '2': Rarely
     '3': Sometimes
@@ -277,7 +277,7 @@ fields:
     - 4
     - 5
   original_name: p3c
-  encoding:
+  encodings:
     '1': Never
     '2': Rarely
     '3': Sometimes
@@ -296,7 +296,7 @@ fields:
     - 4
     - 5
   original_name: p3d
-  encoding:
+  encodings:
     '1': Never
     '2': Rarely
     '3': Sometimes
@@ -315,7 +315,7 @@ fields:
     - 4
     - 5
   original_name: p4a
-  encoding:
+  encodings:
     '1': Never
     '2': Rarely
     '3': Sometimes
@@ -334,7 +334,7 @@ fields:
     - 4
     - 5
   original_name: p4b
-  encoding:
+  encodings:
     '1': Never
     '2': Rarely
     '3': Sometimes
@@ -353,7 +353,7 @@ fields:
     - 4
     - 5
   original_name: p4c
-  encoding:
+  encodings:
     '1': Never
     '2': Rarely
     '3': Sometimes
@@ -372,7 +372,7 @@ fields:
     - 4
     - 5
   original_name: p4d
-  encoding:
+  encodings:
     '1': Never
     '2': Rarely
     '3': Sometimes
@@ -391,7 +391,7 @@ fields:
     - 4
     - 5
   original_name: p5a
-  encoding:
+  encodings:
     '1': Not at all
     '2': A little bit
     '3': Somewhat
@@ -411,7 +411,7 @@ fields:
     - 4
     - 5
   original_name: p5b
-  encoding:
+  encodings:
     '1': Not at all
     '2': A little bit
     '3': Somewhat
@@ -430,7 +430,7 @@ fields:
     - 4
     - 5
   original_name: p5c
-  encoding:
+  encodings:
     '1': Not at all
     '2': A little bit
     '3': Somewhat
@@ -449,7 +449,7 @@ fields:
     - 4
     - 5
   original_name: p5d
-  encoding:
+  encodings:
     '1': Not at all
     '2': A little bit
     '3': Somewhat
@@ -468,7 +468,7 @@ fields:
     - 4
     - 5
   original_name: p6a
-  encoding:
+  encodings:
     '1': Very poor
     '2': Poor
     '3': Fair
@@ -487,7 +487,7 @@ fields:
     - 4
     - 5
   original_name: p6b
-  encoding:
+  encodings:
     '1': Not at all
     '2': A little bit
     '3': Somewhat
@@ -506,7 +506,7 @@ fields:
     - 4
     - 5
   original_name: p6c
-  encoding:
+  encodings:
     '1': Not at all
     '2': A little bit
     '3': Somewhat
@@ -525,7 +525,7 @@ fields:
     - 4
     - 5
   original_name: p6d
-  encoding:
+  encodings:
     '1': Not at all
     '2': A little bit
     '3': Somewhat
@@ -544,7 +544,7 @@ fields:
     - 4
     - 5
   original_name: p7a
-  encoding:
+  encodings:
     '1': Not at all
     '2': A little bit
     '3': Somewhat
@@ -564,7 +564,7 @@ fields:
     - 4
     - 5
   original_name: p7b
-  encoding:
+  encodings:
     '1': Not at all
     '2': A little bit
     '3': Somewhat
@@ -584,7 +584,7 @@ fields:
     - 4
     - 5
   original_name: p8a
-  encoding:
+  encodings:
     '1': Not at all
     '2': A little bit
     '3': Somewhat
@@ -604,7 +604,7 @@ fields:
     - 4
     - 5
   original_name: p8b
-  encoding:
+  encodings:
     '1': Not at all
     '2': A little bit
     '3': Somewhat
@@ -624,7 +624,7 @@ fields:
     - 4
     - 5
   original_name: p8c
-  encoding:
+  encodings:
     '1': Not at all
     '2': A little bit
     '3': Somewhat
@@ -644,7 +644,7 @@ fields:
     - 4
     - 5
   original_name: p8d
-  encoding:
+  encodings:
     '1': Not at all
     '2': A little bit
     '3': Somewhat
