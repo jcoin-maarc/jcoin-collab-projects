@@ -701,23 +701,23 @@ fields:
             "past_week_hopeless",
         ]
   type: number
-- module: PROMIS - construct scores
-  name: anxiety_utility
-  title: Anxiety Utility Score
-  source: https://github.com/janelhanmer/PROPr
-  description: |
-    A latent construct score measuring anxiety state expressed as 
-    feelings of difficulty focusing on anything other than anxiety, 
-    worry, fear, uneasiness over the past week.
+# - module: PROMIS - construct scores
+#   name: anxiety_utility
+#   title: Anxiety Utility Score
+#   source: https://github.com/janelhanmer/PROPr
+#   description: |
+#     A latent construct score measuring anxiety state expressed as 
+#     feelings of difficulty focusing on anything other than anxiety, 
+#     worry, fear, uneasiness over the past week.
 
-    Calculation: TODO
-    Input variables: [
-            "past_week_fearful",
-            "past_week_anxiety",
-            "past_week_worried",
-            "past_week_uneasy",
-        ]
-  type: number
+#     Calculation: TODO
+#     Input variables: [
+#             "past_week_fearful",
+#             "past_week_anxiety",
+#             "past_week_worried",
+#             "past_week_uneasy",
+#         ]
+#   type: number
 - module: PROMIS - construct scores
   name: fatigue_utility
   title: Fatigue Utility Score

@@ -823,14 +823,6 @@
     },
     {
       "module": "PROMIS - construct scores",
-      "name": "anxiety_utility",
-      "title": "Anxiety Utility Score",
-      "source": "https://github.com/janelhanmer/PROPr",
-      "description": "A latent construct score measuring anxiety state expressed as \nfeelings of difficulty focusing on anything other than anxiety, \nworry, fear, uneasiness over the past week.\n\nCalculation: TODO\nInput variables: [\n        \"past_week_fearful\",\n        \"past_week_anxiety\",\n        \"past_week_worried\",\n        \"past_week_uneasy\",\n    ]\n",
-      "type": "number"
-    },
-    {
-      "module": "PROMIS - construct scores",
       "name": "fatigue_utility",
       "title": "Fatigue Utility Score",
       "source": "https://github.com/janelhanmer/PROPr",
