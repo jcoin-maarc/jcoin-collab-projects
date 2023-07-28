@@ -3,8 +3,664 @@ name: "timepoints_promis"
 title: "Timepoints: PROMIS"
 description: "PROMIS individual and latent construct scores across visits"
 fields:
-# NOTE: individual measures pulled from core measure timepoints schema and not
-# included here
+- module: Record and linkage
+  name: jdc_person_id
+  title: JCOIN data commons person identifier
+  type: string
+  description: The generated unique identifier specific to the JCOIN Data Commons
+    for a given individual (client or staff).
+  original_name: jdc_person_id
+  constraints:
+    required: true
+    pattern: "[A-Z][0-9]{3}-[0-9]{4}"
+- module: Record and linkage
+  name: visit_number
+  title: Visit Number
+  type: integer
+  description: A number that identifies the visit or timepoint of data collection
+    (baseline=1 and each subsequent follow up is 2 or greater).
+  original_name: visit_number
+  constraints:
+    required: true
+    minimum: 1
+- module: Record and linkage
+  name: visit_month
+  title: Visit Month
+  type: string
+  description: 'Marks the intended visit time point. For example, if the baseline
+    visit, this should be populated as Baseline.\n If a follow up, this should be
+    populated as the Month and month number (eg., for a study with a Baseline and
+    3,6, and 12 month follow ups the values should be Baseline, Month 3, Month 6,
+    Month 12, respectively.\nIMPORTANT: this field represents the intended month in
+    the study design.\nSo, for example, if a participant comes back 2 months after
+    Baseline for the Month 1 follow up, this field should still be populated with
+    Month 1.'
+  original_name: visit_month
+  constraints:
+    required: true
+    pattern: "^Baseline$|^\\d+ month$"
+- module: Record and linkage
+  name: shifted_visit_date
+  title: Visit Date (shifted)
+  type: date
+  description: This is the date of the visit (ie time point) after shifting by a random
+    number 182 days before or 182 days after the actual visit date. The shifting is
+    done on the individual level which retains the time interval between visits (and
+    allows calculations of days between time points or other date fields which are
+    shifted by the same number of days). To avoid issues with type conversion errors,
+    the date is of type integer
+  original_name: shifted_visit_dt
+  constraints:
+    required: true
+  format: "%Y%m%d"
+- module: Record and linkage
+  name: visit_type
+  title: Visit Type
+  type: string
+  description: The visit type/category (either baseline or follow up)
+  constraints:
+    enum:
+    - Baseline
+    - Follow-up
+    required: true
+  original_name: visit_type
+
+- name: difficulty_chores
+  module: PROMIS - Physical Activity
+  title: Difficulty with chores and house keeping
+  type: integer
+  description: "[... do chores such as sweeping, mopping, janitorial work or other
+    house cleaning work] In the past 7 days I was able to . . ."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p1a
+  encoding:
+    '1': Without any difficulty
+    '2': With a little difficulty
+    '3': With some difficulty
+    '4': With much difficulty
+    '5': Unable to do
+- name: difficulty_stairs
+  module: PROMIS - Physical Activity
+  title: Difficulty using stairs
+  type: integer
+  description: "[...go up and down stairs at a normal pace] In the past 7 days I was
+    able to . . ."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p1b
+  encoding:
+    '1': Without any difficulty
+    '2': With a little difficulty
+    '3': With some difficulty
+    '4': With much difficulty
+    '5': Unable to do
+- name: difficulty_walking
+  module: PROMIS - Physical Activity
+  title: Difficulty walking
+  type: integer
+  description: "[...walk around for at least 15 minutes] In the past 7 days I was
+    able to . . ."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p1c
+  encoding:
+    '1': Without any difficulty
+    '2': With a little difficulty
+    '3': With some difficulty
+    '4': With much difficulty
+    '5': Unable to do
+- name: difficulty_traveling
+  module: PROMIS - Physical Activity
+  title: Difficulty traveling
+  type: integer
+  description: "[... get from place to place] In the past 7 days I was able to . .
+    ."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p1d
+  encoding:
+    '1': Without any difficulty
+    '2': With a little difficulty
+    '3': With some difficulty
+    '4': With much difficulty
+    '5': Unable to do
+- name: trouble_with_leisure
+  module: PROMIS - Social Roles and Activities
+  title: Trouble with Leisure activities with others
+  type: integer
+  description: "[...I had trouble doing all of my regular leisure activities with
+    others ] In the past 7 days..."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p2a
+  encoding:
+    '1': Never
+    '2': Rarely
+    '3': Sometimes
+    '4': Often
+    '5': Always
+- name: trouble_with_family
+  module: PROMIS - Social Roles and Activities
+  title: Trouble with family activities
+  type: integer
+  description: "[...I had trouble doing all of the family activities that I want to
+    do ] In the past 7 days..."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p2b
+  encoding:
+    '1': Never
+    '2': Rarely
+    '3': Sometimes
+    '4': Often
+    '5': Always
+- name: trouble_with_work
+  module: PROMIS - Social Roles and Activities
+  title: Trouble with work
+  type: integer
+  description: "[...I had trouble doing all of my usual work (include work at home)
+    ] In the past 7 days..."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p2c
+  encoding:
+    '1': Never
+    '2': Rarely
+    '3': Sometimes
+    '4': Often
+    '5': Always
+- name: trouble_with_activities
+  module: PROMIS - Social Roles and Activities
+  title: Trouble with activities with friends
+  type: integer
+  description: "[...I had trouble doing all of the activities with friends that I
+    want to do ] In the past 7 days..."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p2d
+  encoding:
+    '1': Never
+    '2': Rarely
+    '3': Sometimes
+    '4': Often
+    '5': Always
+- name: past_week_fearful
+  module: PROMIS - Anxiety
+  title: Feeling fearful
+  type: integer
+  description: "[...I felt fearful] In the past 7 days..."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p3a
+  encoding:
+    '1': Never
+    '2': Rarely
+    '3': Sometimes
+    '4': Often
+    '5': Always
+- name: past_week_anxiety
+  module: PROMIS - Anxiety
+  title: Feeling hard to focus on anything other than anxiety
+  type: integer
+  description: "[...I found it hard to focus on anything other than my anxiety] In
+    the past 7 days..."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p3b
+  encoding:
+    '1': Never
+    '2': Rarely
+    '3': Sometimes
+    '4': Often
+    '5': Always
+- name: past_week_worried
+  module: PROMIS - Anxiety
+  title: Feeling overwhelming worry
+  type: integer
+  description: "[...My worries overwhelmed me] In the past 7 days..."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p3c
+  encoding:
+    '1': Never
+    '2': Rarely
+    '3': Sometimes
+    '4': Often
+    '5': Always
+- name: past_week_uneasy
+  module: PROMIS - Anxiety
+  title: Feeling uneasy
+  type: integer
+  description: "[...I felt uneasy] In the past 7 days..."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p3d
+  encoding:
+    '1': Never
+    '2': Rarely
+    '3': Sometimes
+    '4': Often
+    '5': Always
+- name: past_week_worthless
+  module: PROMIS - Depression
+  title: Feeling worthless
+  type: integer
+  description: "[...I felt worthless] In the past 7 days..."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p4a
+  encoding:
+    '1': Never
+    '2': Rarely
+    '3': Sometimes
+    '4': Often
+    '5': Always
+- name: past_week_helpless
+  module: PROMIS - Depression
+  title: Feeling helpless
+  type: integer
+  description: "[...I felt helpless] In the past 7 days..."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p4b
+  encoding:
+    '1': Never
+    '2': Rarely
+    '3': Sometimes
+    '4': Often
+    '5': Always
+- name: past_week_depressed
+  module: PROMIS - Depression
+  title: Feeling depressed
+  type: integer
+  description: "[...I felt depressed] In the past 7 days..."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p4c
+  encoding:
+    '1': Never
+    '2': Rarely
+    '3': Sometimes
+    '4': Often
+    '5': Always
+- name: past_week_hopeless
+  module: PROMIS - Depression
+  title: Feeling hopeless
+  type: integer
+  description: "[...I felt hopeless ] In the past 7 days..."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p4d
+  encoding:
+    '1': Never
+    '2': Rarely
+    '3': Sometimes
+    '4': Often
+    '5': Always
+- name: past_week_fatigued
+  module: PROMIS - Fatigue
+  title: Feeling fatigued
+  type: integer
+  description: "[...I felt fatigued] In the past 7 days..."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p5a
+  encoding:
+    '1': Not at all
+    '2': A little bit
+    '3': Somewhat
+    '4': Quite a bit
+    '5': Very much
+- name: past_week_tired
+  module: PROMIS - Fatigue
+  title: Trouble starting things because tired
+  type: integer
+  description: "[...I had trouble starting things because I was tired  ] In the past
+    7 days..."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p5b
+  encoding:
+    '1': Not at all
+    '2': A little bit
+    '3': Somewhat
+    '4': Quite a bit
+    '5': Very much
+- name: past_week_rundown
+  module: PROMIS - Fatigue
+  title: Feeling run-down
+  type: integer
+  description: "[...how run-down did you feel on average? ] In the past 7 days..."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p5c
+  encoding:
+    '1': Not at all
+    '2': A little bit
+    '3': Somewhat
+    '4': Quite a bit
+    '5': Very much
+- name: fatigue_level
+  module: PROMIS - Fatigue
+  title: Fatigue level
+  type: integer
+  description: "[...how fatigued were you on average?] In the past 7 days..."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p5d
+  encoding:
+    '1': Not at all
+    '2': A little bit
+    '3': Somewhat
+    '4': Quite a bit
+    '5': Very much
+- name: sleep_quality
+  module: PROMIS - Sleep difficulty
+  title: Sleep quality
+  type: integer
+  description: "[...my sleep quality was] In the past 7 days..."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p6a
+  encoding:
+    '1': Very poor
+    '2': Poor
+    '3': Fair
+    '4': Good
+    '5': Very good
+- name: sleep_refreshing
+  module: PROMIS - Sleep difficulty
+  title: Refreshing sleep
+  type: integer
+  description: "[...my sleep was refreshing] In the past 7 days..."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p6b
+  encoding:
+    '1': Not at all
+    '2': A little bit
+    '3': Somewhat
+    '4': Quite a bit
+    '5': Very much
+- name: sleep_problems
+  module: PROMIS - Sleep difficulty
+  title: Sleep problems
+  type: integer
+  description: "[...I had problems with my sleep] In the past 7 days..."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p6c
+  encoding:
+    '1': Not at all
+    '2': A little bit
+    '3': Somewhat
+    '4': Quite a bit
+    '5': Very much
+- name: sleep_difficulty
+  module: PROMIS - Sleep difficulty
+  title: Difficulty falling asleep
+  type: integer
+  description: "[...I had difficulty falling asleep] In the past 7 days..."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p6d
+  encoding:
+    '1': Not at all
+    '2': A little bit
+    '3': Somewhat
+    '4': Quite a bit
+    '5': Very much
+- name: can_concentrate
+  module: PROMIS - Cognitive
+  title: Concentration
+  type: integer
+  description: "[...I have been able to concentrate ] In the past 7 days..."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p7a
+  encoding:
+    '1': Not at all
+    '2': A little bit
+    '3': Somewhat
+    '4': Quite a bit
+    '5': Very much
+- name: can_remember
+  module: PROMIS - Cognitive
+  title: Remembering things
+  type: integer
+  description: "[...I have been able to remember to do things, like take medicine
+    or buy something I needed ] In the past 7 days..."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p7b
+  encoding:
+    '1': Not at all
+    '2': A little bit
+    '3': Somewhat
+    '4': Quite a bit
+    '5': Very much
+- name: pain_daily_activity
+  module: PROMIS - Pain interference
+  title: Pain interference with day to day activity
+  type: integer
+  description: "[...How much did pain interfere with your day to day activities? ]
+    In the past 7 days..."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p8a
+  encoding:
+    '1': Not at all
+    '2': A little bit
+    '3': Somewhat
+    '4': Quite a bit
+    '5': Very much
+- name: pain_work_around_house
+  module: PROMIS - Pain interference
+  title: Pain inteference with home work
+  type: integer
+  description: "[...How much did pain interfere with work around the home? ] In the
+    past 7 days..."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p8b
+  encoding:
+    '1': Not at all
+    '2': A little bit
+    '3': Somewhat
+    '4': Quite a bit
+    '5': Very much
+- name: pain_social_activity
+  module: PROMIS - Pain interference
+  title: Pain interference with social activities
+  type: integer
+  description: "[...How much did pain interfere with your ability to participate in
+    social activities? ] In the past 7 days..."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p8c
+  encoding:
+    '1': Not at all
+    '2': A little bit
+    '3': Somewhat
+    '4': Quite a bit
+    '5': Very much
+- name: pain_household_chores
+  module: PROMIS - Pain interference
+  title: Pain interference with household chores
+  type: integer
+  description: "[...How much did pain interfere with your household chores? ] In the
+    past 7 days..."
+  constraints:
+    enum:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  original_name: p8d
+  encoding:
+    '1': Not at all
+    '2': A little bit
+    '3': Somewhat
+    '4': Quite a bit
+    '5': Very much
+- name: pain_intensity
+  module: PROMIS - Pain intensity
+  title: Pain intensity rating
+  type: integer
+  description: "[In the past 7 days, how would you rate your pain on average?] For
+    the next question, please responds on scale from 0 being no pain to 10 being the
+    worst pain imaginable."
+  constraints:
+    maximum: 10
+  original_name: p9
+
 - module: PROMIS - construct scores
   name: PROPr
   title: PROMIS-Preference Score

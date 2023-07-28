@@ -67,525 +67,735 @@
       "original_name": "visit_type"
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "difficulty_chores",
+      "module": "PROMIS - Physical Activity",
       "title": "Difficulty with chores and house keeping",
-      "type": "string",
+      "type": "integer",
       "description": "[... do chores such as sweeping, mopping, janitorial work or other house cleaning work] In the past 7 days I was able to . . .",
       "constraints": {
         "enum": [
-          "Without any difficulty",
-          "With a little difficulty",
-          "With some difficulty",
-          "With much difficulty",
-          "Unable to do"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p1a"
+      "original_name": "p1a",
+      "encoding": {
+        "1": "Without any difficulty",
+        "2": "With a little difficulty",
+        "3": "With some difficulty",
+        "4": "With much difficulty",
+        "5": "Unable to do"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "difficulty_stairs",
+      "module": "PROMIS - Physical Activity",
       "title": "Difficulty using stairs",
-      "type": "string",
+      "type": "integer",
       "description": "[...go up and down stairs at a normal pace] In the past 7 days I was able to . . .",
       "constraints": {
         "enum": [
-          "Without any difficulty",
-          "With a little difficulty",
-          "With some difficulty",
-          "With much difficulty",
-          "Unable to do"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p1b"
+      "original_name": "p1b",
+      "encoding": {
+        "1": "Without any difficulty",
+        "2": "With a little difficulty",
+        "3": "With some difficulty",
+        "4": "With much difficulty",
+        "5": "Unable to do"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "difficulty_walking",
+      "module": "PROMIS - Physical Activity",
       "title": "Difficulty walking",
-      "type": "string",
+      "type": "integer",
       "description": "[...walk around for at least 15 minutes] In the past 7 days I was able to . . .",
       "constraints": {
         "enum": [
-          "Without any difficulty",
-          "With a little difficulty",
-          "With some difficulty",
-          "With much difficulty",
-          "Unable to do"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p1c"
+      "original_name": "p1c",
+      "encoding": {
+        "1": "Without any difficulty",
+        "2": "With a little difficulty",
+        "3": "With some difficulty",
+        "4": "With much difficulty",
+        "5": "Unable to do"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "difficulty_traveling",
+      "module": "PROMIS - Physical Activity",
       "title": "Difficulty traveling",
-      "type": "string",
+      "type": "integer",
       "description": "[... get from place to place] In the past 7 days I was able to . . .",
       "constraints": {
         "enum": [
-          "Without any difficulty",
-          "With a little difficulty",
-          "With some difficulty",
-          "With much difficulty",
-          "Unable to do"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p1d"
+      "original_name": "p1d",
+      "encoding": {
+        "1": "Without any difficulty",
+        "2": "With a little difficulty",
+        "3": "With some difficulty",
+        "4": "With much difficulty",
+        "5": "Unable to do"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "trouble_with_leisure",
+      "module": "PROMIS - Social Roles and Activities",
       "title": "Trouble with Leisure activities with others",
-      "type": "string",
+      "type": "integer",
       "description": "[...I had trouble doing all of my regular leisure activities with others ] In the past 7 days...",
       "constraints": {
         "enum": [
-          "Never",
-          "Rarely",
-          "Sometimes",
-          "Often",
-          "Always"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p2a"
+      "original_name": "p2a",
+      "encoding": {
+        "1": "Never",
+        "2": "Rarely",
+        "3": "Sometimes",
+        "4": "Often",
+        "5": "Always"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "trouble_with_family",
+      "module": "PROMIS - Social Roles and Activities",
       "title": "Trouble with family activities",
-      "type": "string",
+      "type": "integer",
       "description": "[...I had trouble doing all of the family activities that I want to do ] In the past 7 days...",
       "constraints": {
         "enum": [
-          "Never",
-          "Rarely",
-          "Sometimes",
-          "Often",
-          "Always"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p2b"
+      "original_name": "p2b",
+      "encoding": {
+        "1": "Never",
+        "2": "Rarely",
+        "3": "Sometimes",
+        "4": "Often",
+        "5": "Always"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "trouble_with_work",
+      "module": "PROMIS - Social Roles and Activities",
       "title": "Trouble with work",
-      "type": "string",
+      "type": "integer",
       "description": "[...I had trouble doing all of my usual work (include work at home) ] In the past 7 days...",
       "constraints": {
         "enum": [
-          "Never",
-          "Rarely",
-          "Sometimes",
-          "Often",
-          "Always"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p2c"
+      "original_name": "p2c",
+      "encoding": {
+        "1": "Never",
+        "2": "Rarely",
+        "3": "Sometimes",
+        "4": "Often",
+        "5": "Always"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "trouble_with_activities",
+      "module": "PROMIS - Social Roles and Activities",
       "title": "Trouble with activities with friends",
-      "type": "string",
+      "type": "integer",
       "description": "[...I had trouble doing all of the activities with friends that I want to do ] In the past 7 days...",
       "constraints": {
         "enum": [
-          "Never",
-          "Rarely",
-          "Sometimes",
-          "Often",
-          "Always"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p2d"
+      "original_name": "p2d",
+      "encoding": {
+        "1": "Never",
+        "2": "Rarely",
+        "3": "Sometimes",
+        "4": "Often",
+        "5": "Always"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "past_week_fearful",
+      "module": "PROMIS - Anxiety",
       "title": "Feeling fearful",
-      "type": "string",
+      "type": "integer",
       "description": "[...I felt fearful] In the past 7 days...",
       "constraints": {
         "enum": [
-          "Never",
-          "Rarely",
-          "Sometimes",
-          "Often",
-          "Always"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p3a"
+      "original_name": "p3a",
+      "encoding": {
+        "1": "Never",
+        "2": "Rarely",
+        "3": "Sometimes",
+        "4": "Often",
+        "5": "Always"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "past_week_anxiety",
+      "module": "PROMIS - Anxiety",
       "title": "Feeling hard to focus on anything other than anxiety",
-      "type": "string",
+      "type": "integer",
       "description": "[...I found it hard to focus on anything other than my anxiety] In the past 7 days...",
       "constraints": {
         "enum": [
-          "Never",
-          "Rarely",
-          "Sometimes",
-          "Often",
-          "Always"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p3b"
+      "original_name": "p3b",
+      "encoding": {
+        "1": "Never",
+        "2": "Rarely",
+        "3": "Sometimes",
+        "4": "Often",
+        "5": "Always"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "past_week_worried",
+      "module": "PROMIS - Anxiety",
       "title": "Feeling overwhelming worry",
-      "type": "string",
+      "type": "integer",
       "description": "[...My worries overwhelmed me] In the past 7 days...",
       "constraints": {
         "enum": [
-          "Never",
-          "Rarely",
-          "Sometimes",
-          "Often",
-          "Always"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p3c"
+      "original_name": "p3c",
+      "encoding": {
+        "1": "Never",
+        "2": "Rarely",
+        "3": "Sometimes",
+        "4": "Often",
+        "5": "Always"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "past_week_uneasy",
+      "module": "PROMIS - Anxiety",
       "title": "Feeling uneasy",
-      "type": "string",
+      "type": "integer",
       "description": "[...I felt uneasy] In the past 7 days...",
       "constraints": {
         "enum": [
-          "Never",
-          "Rarely",
-          "Sometimes",
-          "Often",
-          "Always"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p3d"
+      "original_name": "p3d",
+      "encoding": {
+        "1": "Never",
+        "2": "Rarely",
+        "3": "Sometimes",
+        "4": "Often",
+        "5": "Always"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "past_week_worthless",
+      "module": "PROMIS - Depression",
       "title": "Feeling worthless",
-      "type": "string",
+      "type": "integer",
       "description": "[...I felt worthless] In the past 7 days...",
       "constraints": {
         "enum": [
-          "Never",
-          "Rarely",
-          "Sometimes",
-          "Often",
-          "Always"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p4a"
+      "original_name": "p4a",
+      "encoding": {
+        "1": "Never",
+        "2": "Rarely",
+        "3": "Sometimes",
+        "4": "Often",
+        "5": "Always"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "past_week_helpless",
+      "module": "PROMIS - Depression",
       "title": "Feeling helpless",
-      "type": "string",
+      "type": "integer",
       "description": "[...I felt helpless] In the past 7 days...",
       "constraints": {
         "enum": [
-          "Never",
-          "Rarely",
-          "Sometimes",
-          "Often",
-          "Always"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p4b"
+      "original_name": "p4b",
+      "encoding": {
+        "1": "Never",
+        "2": "Rarely",
+        "3": "Sometimes",
+        "4": "Often",
+        "5": "Always"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "past_week_depressed",
+      "module": "PROMIS - Depression",
       "title": "Feeling depressed",
-      "type": "string",
+      "type": "integer",
       "description": "[...I felt depressed] In the past 7 days...",
       "constraints": {
         "enum": [
-          "Never",
-          "Rarely",
-          "Sometimes",
-          "Often",
-          "Always"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p4c"
+      "original_name": "p4c",
+      "encoding": {
+        "1": "Never",
+        "2": "Rarely",
+        "3": "Sometimes",
+        "4": "Often",
+        "5": "Always"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "past_week_hopeless",
+      "module": "PROMIS - Depression",
       "title": "Feeling hopeless",
-      "type": "string",
+      "type": "integer",
       "description": "[...I felt hopeless ] In the past 7 days...",
       "constraints": {
         "enum": [
-          "Never",
-          "Rarely",
-          "Sometimes",
-          "Often",
-          "Always"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p4d"
+      "original_name": "p4d",
+      "encoding": {
+        "1": "Never",
+        "2": "Rarely",
+        "3": "Sometimes",
+        "4": "Often",
+        "5": "Always"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "past_week_fatigued",
+      "module": "PROMIS - Fatigue",
       "title": "Feeling fatigued",
-      "type": "string",
+      "type": "integer",
       "description": "[...I felt fatigued] In the past 7 days...",
       "constraints": {
         "enum": [
-          "Not at all",
-          "A little bit",
-          "Somewhat",
-          "Quite a bit",
-          "Very much"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p5a"
+      "original_name": "p5a",
+      "encoding": {
+        "1": "Not at all",
+        "2": "A little bit",
+        "3": "Somewhat",
+        "4": "Quite a bit",
+        "5": "Very much"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "past_week_tired",
+      "module": "PROMIS - Fatigue",
       "title": "Trouble starting things because tired",
-      "type": "string",
+      "type": "integer",
       "description": "[...I had trouble starting things because I was tired  ] In the past 7 days...",
       "constraints": {
         "enum": [
-          "Not at all",
-          "A little bit",
-          "Somewhat",
-          "Quite a bit",
-          "Very much"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p5b"
+      "original_name": "p5b",
+      "encoding": {
+        "1": "Not at all",
+        "2": "A little bit",
+        "3": "Somewhat",
+        "4": "Quite a bit",
+        "5": "Very much"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "past_week_rundown",
+      "module": "PROMIS - Fatigue",
       "title": "Feeling run-down",
-      "type": "string",
+      "type": "integer",
       "description": "[...how run-down did you feel on average? ] In the past 7 days...",
       "constraints": {
         "enum": [
-          "Not at all",
-          "A little bit",
-          "Somewhat",
-          "Quite a bit",
-          "Very much"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p5c"
+      "original_name": "p5c",
+      "encoding": {
+        "1": "Not at all",
+        "2": "A little bit",
+        "3": "Somewhat",
+        "4": "Quite a bit",
+        "5": "Very much"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "fatigue_level",
+      "module": "PROMIS - Fatigue",
       "title": "Fatigue level",
-      "type": "string",
+      "type": "integer",
       "description": "[...how fatigued were you on average?] In the past 7 days...",
       "constraints": {
         "enum": [
-          "Not at all",
-          "A little bit",
-          "Somewhat",
-          "Quite a bit",
-          "Very much"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p5d"
+      "original_name": "p5d",
+      "encoding": {
+        "1": "Not at all",
+        "2": "A little bit",
+        "3": "Somewhat",
+        "4": "Quite a bit",
+        "5": "Very much"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "sleep_quality",
+      "module": "PROMIS - Sleep difficulty",
       "title": "Sleep quality",
-      "type": "string",
+      "type": "integer",
       "description": "[...my sleep quality was] In the past 7 days...",
       "constraints": {
         "enum": [
-          "Very poor",
-          "Poor",
-          "Fair",
-          "Good",
-          "Very good"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p6a"
+      "original_name": "p6a",
+      "encoding": {
+        "1": "Very poor",
+        "2": "Poor",
+        "3": "Fair",
+        "4": "Good",
+        "5": "Very good"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "sleep_refreshing",
+      "module": "PROMIS - Sleep difficulty",
       "title": "Refreshing sleep",
-      "type": "string",
+      "type": "integer",
       "description": "[...my sleep was refreshing] In the past 7 days...",
       "constraints": {
         "enum": [
-          "Not at all",
-          "A little bit",
-          "Somewhat",
-          "Quite a bit",
-          "Very much"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p6b"
+      "original_name": "p6b",
+      "encoding": {
+        "1": "Not at all",
+        "2": "A little bit",
+        "3": "Somewhat",
+        "4": "Quite a bit",
+        "5": "Very much"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "sleep_problems",
+      "module": "PROMIS - Sleep difficulty",
       "title": "Sleep problems",
-      "type": "string",
+      "type": "integer",
       "description": "[...I had problems with my sleep] In the past 7 days...",
       "constraints": {
         "enum": [
-          "Not at all",
-          "A little bit",
-          "Somewhat",
-          "Quite a bit",
-          "Very much"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p6c"
+      "original_name": "p6c",
+      "encoding": {
+        "1": "Not at all",
+        "2": "A little bit",
+        "3": "Somewhat",
+        "4": "Quite a bit",
+        "5": "Very much"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "sleep_difficulty",
+      "module": "PROMIS - Sleep difficulty",
       "title": "Difficulty falling asleep",
-      "type": "string",
+      "type": "integer",
       "description": "[...I had difficulty falling asleep] In the past 7 days...",
       "constraints": {
         "enum": [
-          "Not at all",
-          "A little bit",
-          "Somewhat",
-          "Quite a bit",
-          "Very much"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p6d"
+      "original_name": "p6d",
+      "encoding": {
+        "1": "Not at all",
+        "2": "A little bit",
+        "3": "Somewhat",
+        "4": "Quite a bit",
+        "5": "Very much"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "can_concentrate",
+      "module": "PROMIS - Cognitive",
       "title": "Concentration",
-      "type": "string",
+      "type": "integer",
       "description": "[...I have been able to concentrate ] In the past 7 days...",
       "constraints": {
         "enum": [
-          "Not at all",
-          "A little bit",
-          "Somewhat",
-          "Quite a bit",
-          "Very much"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p7a"
+      "original_name": "p7a",
+      "encoding": {
+        "1": "Not at all",
+        "2": "A little bit",
+        "3": "Somewhat",
+        "4": "Quite a bit",
+        "5": "Very much"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "can_remember",
+      "module": "PROMIS - Cognitive",
       "title": "Remembering things",
-      "type": "string",
+      "type": "integer",
       "description": "[...I have been able to remember to do things, like take medicine or buy something I needed ] In the past 7 days...",
       "constraints": {
         "enum": [
-          "Not at all",
-          "A little bit",
-          "Somewhat",
-          "Quite a bit",
-          "Very much"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p7b"
+      "original_name": "p7b",
+      "encoding": {
+        "1": "Not at all",
+        "2": "A little bit",
+        "3": "Somewhat",
+        "4": "Quite a bit",
+        "5": "Very much"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "pain_daily_activity",
+      "module": "PROMIS - Pain interference",
       "title": "Pain interference with day to day activity",
-      "type": "string",
+      "type": "integer",
       "description": "[...How much did pain interfere with your day to day activities? ] In the past 7 days...",
       "constraints": {
         "enum": [
-          "Not at all",
-          "A little bit",
-          "Somewhat",
-          "Quite a bit",
-          "Very much"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p8a"
+      "original_name": "p8a",
+      "encoding": {
+        "1": "Not at all",
+        "2": "A little bit",
+        "3": "Somewhat",
+        "4": "Quite a bit",
+        "5": "Very much"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "pain_work_around_house",
+      "module": "PROMIS - Pain interference",
       "title": "Pain inteference with home work",
-      "type": "string",
+      "type": "integer",
       "description": "[...How much did pain interfere with work around the home? ] In the past 7 days...",
       "constraints": {
         "enum": [
-          "Not at all",
-          "A little bit",
-          "Somewhat",
-          "Quite a bit",
-          "Very much"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p8b"
+      "original_name": "p8b",
+      "encoding": {
+        "1": "Not at all",
+        "2": "A little bit",
+        "3": "Somewhat",
+        "4": "Quite a bit",
+        "5": "Very much"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "pain_social_activity",
+      "module": "PROMIS - Pain interference",
       "title": "Pain interference with social activities",
-      "type": "string",
+      "type": "integer",
       "description": "[...How much did pain interfere with your ability to participate in social activities? ] In the past 7 days...",
       "constraints": {
         "enum": [
-          "Not at all",
-          "A little bit",
-          "Somewhat",
-          "Quite a bit",
-          "Very much"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p8c"
+      "original_name": "p8c",
+      "encoding": {
+        "1": "Not at all",
+        "2": "A little bit",
+        "3": "Somewhat",
+        "4": "Quite a bit",
+        "5": "Very much"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "pain_household_chores",
+      "module": "PROMIS - Pain interference",
       "title": "Pain interference with household chores",
-      "type": "string",
+      "type": "integer",
       "description": "[...How much did pain interfere with your household chores? ] In the past 7 days...",
       "constraints": {
         "enum": [
-          "Not at all",
-          "A little bit",
-          "Somewhat",
-          "Quite a bit",
-          "Very much"
+          1,
+          2,
+          3,
+          4,
+          5
         ]
       },
-      "original_name": "p8d"
+      "original_name": "p8d",
+      "encoding": {
+        "1": "Not at all",
+        "2": "A little bit",
+        "3": "Somewhat",
+        "4": "Quite a bit",
+        "5": "Very much"
+      }
     },
     {
-      "module": "PROMIS 29+2/ PROPr",
       "name": "pain_intensity",
+      "module": "PROMIS - Pain intensity",
       "title": "Pain intensity rating",
       "type": "integer",
       "description": "[In the past 7 days, how would you rate your pain on average?] For the next question, please responds on scale from 0 being no pain to 10 being the worst pain imaginable.",
-      "original_name": "p9",
       "constraints": {
         "maximum": 10
-      }
+      },
+      "original_name": "p9"
     },
     {
       "module": "PROMIS - construct scores",
